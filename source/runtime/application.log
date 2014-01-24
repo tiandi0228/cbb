@@ -1,0 +1,16 @@
+2014/01/11 11:54:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: update cbb_users a left join cbb_users_info b on a.uid=b.uid set a.email='',a.realname='',b.msn='',b.gender='',b.birthday='',b.location='',b.hometown='',b.homepage='',b.signature='',b.aliww='',b.qq='',b.mobile='' where a.uid=.
+2014/01/11 11:54:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in E:\Website\cbb\source\framework\db\CDbCommand.php:357
+Stack trace:
+#0 E:\Website\cbb\protected\modules\admin\controllers\UserController.php(68): CDbCommand->execute()
+#1 E:\Website\cbb\source\framework\web\actions\CInlineAction.php(49): UserController->actionDoedit()
+#2 E:\Website\cbb\source\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 E:\Website\cbb\source\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 E:\Website\cbb\source\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 E:\Website\cbb\source\framework\web\CWebApplication.php(282): CController->run('doedit')
+#6 E:\Website\cbb\source\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/user/doed...')
+#7 E:\Website\cbb\source\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#8 E:\Website\cbb\index.php(20): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=admin/user/doedit
+HTTP_REFERER=http://www.cbb.com/index.php?r=admin/user/edit/uid/3
+---
